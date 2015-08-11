@@ -1,0 +1,67 @@
+$blue: #036AAB;
+$whiteTransparent: rgba(3, 106, 171, 0);
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+div {
+  border: 1px inset darken($blue, 1);
+  box-shadow: 0 0 10px rgba(3, 106, 171, 0.3);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 5px 10px;
+  transform: translate(-50%, -50%);
+  background: lighten(rgba(3, 106, 171, 1), 65%);
+
+  #throbber {
+    width: 96px;
+    height: 96px;
+
+    svg {
+      width: 96px;
+      height: 96px;
+    }
+
+    .marker {
+      fill: #036AAB;
+      stroke: #035B92;
+      stroke-width: 1;
+    }
+
+    .gear {
+      transform-origin: 50% 50%;
+      animation: spinner ease 2s 0.5s infinite;
+      fill: #8f9094;
+      fill-rule: nonzero;
+    }
+
+  }
+}
+
+@include keyframes(spinner) {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
