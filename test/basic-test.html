@@ -15,42 +15,39 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../test-fixture/test-fixture-mocha.js"></script>
 
     <!-- Step 1: import the element to test -->
     <link rel="import" href="../ll-throbber.html">
+    <link rel="import" href="../../test-fixture/test-fixture.html">
   </head>
   <body>
 
-    <!-- You can use the document as a place to set up your fixtures. -->
-    <ll-throbber></ll-throbber>
+  <test-fixture id="fixture">
+    <template>
+      <ll-throbber active=""></ll-throbber>
+    </template>
+  </test-fixture>
 
-    <script>
-      var myEl = document.querySelector('ll-throbber');
+  <script>
 
-      suite('<ll-throbber>', function() {
-
-        test('defines the "author" property', function() {
-          assert.equal(myEl.author.name, 'Dimitri Glazkov');
-          assert.equal(myEl.author.image, 'http://addyosmani.com/blog/wp-content/uploads/2013/04/unicorn.jpg');
-        });
-
-        test('says hello', function() {
-          assert.equal(myEl.sayHello(), 'll-throbber says, Hello World!');
-
-          var greetings = myEl.sayHello('greetings Earthlings');
-          assert.equal(greetings, 'll-throbber says, greetings Earthlings');
-        });
-
-        test('fires lasers', function(done) {
-          myEl.addEventListener('ll-throbber-lasers', function(event) {
-            assert.equal(event.detail.sound, 'Pew pew!');
-            done();
-          });
-          myEl.fireLasers();
-        });
-
+    describe('<ll-property-image> - Required Inputs', function() {
+      var element;
+      beforeEach(function() {
+        element = fixture('fixture');
       });
-    </script>
+
+      it('should expose an "active" property', function() {
+        expect(element.getAttribute('active')).to.be.eql('');
+      });
+
+      it('should remove the attribute when "active" is set to false', function() {
+        element.active = false;
+        expect(element.getAttribute('active')).to.be.null;
+      });
+
+    });
+  </script>
 
   </body>
 </html>
