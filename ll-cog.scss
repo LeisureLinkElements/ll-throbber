@@ -1,0 +1,36 @@
+@import 'mixins';
+
+:host {
+  display: none;
+  position: relative;
+  fill: var(--ll-primary-blue, #cdcdcd);
+  overflow: hidden;
+}
+
+:host[active] {
+  display: block;
+}
+
+.cog {
+  transform-origin: 50% 50%;
+  animation: spinner ease 2s 0s infinite;
+}
+
+svg {
+  position: absolute;
+}
+
+@include keyframes(spinner) {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

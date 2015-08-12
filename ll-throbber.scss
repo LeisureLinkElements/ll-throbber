@@ -1,20 +1,7 @@
+@import 'mixins';
+
 $blue: #036AAB;
 $whiteTransparent: rgba(3, 106, 171, 0);
-
-@mixin keyframes($animationName) {
-  @-webkit-keyframes #{$animationName} {
-    @content;
-  }
-  @-moz-keyframes #{$animationName} {
-    @content;
-  }
-  @-o-keyframes #{$animationName} {
-    @content;
-  }
-  @keyframes #{$animationName} {
-    @content;
-  }
-}
 
 div {
   border: 1px inset darken($blue, 1);
