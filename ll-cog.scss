@@ -3,7 +3,9 @@
 :host {
   display: none;
   position: relative;
-  fill: var(--ll-primary-blue, #cdcdcd);
+  fill: var(--disabled);
+  stroke: var(--gray-medium);
+  stroke-width: 1;
   overflow: hidden;
 }
 

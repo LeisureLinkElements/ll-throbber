@@ -1,6 +1,7 @@
 @import 'mixins';
 
 $blue: #036AAB;
+
 $whiteTransparent: rgba(3, 106, 171, 0);
 
 div {
@@ -23,15 +24,15 @@ div {
     }
 
     .marker {
-      fill: #036AAB;
-      stroke: #035B92;
+      fill: var(--blue);
+      stroke: var(--blue-dark);
       stroke-width: 1;
     }
 
     .gear {
       transform-origin: 50% 50%;
       animation: spinner ease 2s 0.5s infinite;
-      fill: #8f9094;
+      fill: var(--disabled);
       fill-rule: nonzero;
     }
 
