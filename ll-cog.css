@@ -1,27 +1,20 @@
-div {
-  border: 1px inset #0367a6;
-  box-shadow: 0 0 10px rgba(3, 106, 171, 0.3);
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  padding: 5px 10px;
-  transform: translate(-50%, -50%);
-  background: #fbfdff; }
-  div #throbber {
-    width: 96px;
-    height: 96px; }
-    div #throbber svg {
-      width: 96px;
-      height: 96px; }
-    div #throbber .marker {
-      fill: var(--blue);
-      stroke: var(--blue-dark);
-      stroke-width: 1; }
-    div #throbber .gear {
-      transform-origin: 50% 50%;
-      animation: spinner ease 2s 0.5s infinite;
-      fill: var(--disabled);
-      fill-rule: nonzero; }
+:host {
+  display: none;
+  position: relative;
+  fill: var(--disabled);
+  stroke: var(--gray-medium);
+  stroke-width: 1;
+  overflow: hidden; }
+
+:host[active] {
+  display: block; }
+
+.cog {
+  transform-origin: 50% 50%;
+  animation: spinner ease 2s 0s infinite; }
+
+svg {
+  position: absolute; }
 
 @-webkit-keyframes spinner {
   from {
@@ -68,4 +61,4 @@ div {
     -ms-transform: rotate(360deg);
     transform: rotate(360deg); } }
 
-/*# sourceMappingURL=ll-throbber.css.map */
+/*# sourceMappingURL=ll-cog.css.map */

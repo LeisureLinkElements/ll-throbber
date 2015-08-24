@@ -1,20 +1,8 @@
-$blue: #036AAB;
-$whiteTransparent: rgba(3, 106, 171, 0);
+@import 'mixins';
 
-@mixin keyframes($animationName) {
-  @-webkit-keyframes #{$animationName} {
-    @content;
-  }
-  @-moz-keyframes #{$animationName} {
-    @content;
-  }
-  @-o-keyframes #{$animationName} {
-    @content;
-  }
-  @keyframes #{$animationName} {
-    @content;
-  }
-}
+$blue: #036AAB;
+
+$whiteTransparent: rgba(3, 106, 171, 0);
 
 div {
   border: 1px inset darken($blue, 1);
@@ -36,15 +24,15 @@ div {
     }
 
     .marker {
-      fill: #036AAB;
-      stroke: #035B92;
+      fill: var(--blue);
+      stroke: var(--blue-dark);
       stroke-width: 1;
     }
 
     .gear {
       transform-origin: 50% 50%;
       animation: spinner ease 2s 0.5s infinite;
-      fill: #8f9094;
+      fill: var(--disabled);
       fill-rule: nonzero;
     }
 
