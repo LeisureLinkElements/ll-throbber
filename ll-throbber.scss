@@ -4,24 +4,21 @@ $blue: #036AAB;
 
 $whiteTransparent: rgba(3, 106, 171, 0);
 
+:host[show-border] {
+  #container {
+    border: 1px inset darken($blue, 1);
+    box-shadow: 0 0 10px rgba(3, 106, 171, 0.3);
+    padding: 5px 10px;
+    background: lighten(rgba(3, 106, 171, 1), 65%);
+  }
+}
+
+#container {
+  max-width: 100px;
+}
+
 div {
-  border: 1px inset darken($blue, 1);
-  box-shadow: 0 0 10px rgba(3, 106, 171, 0.3);
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  padding: 5px 10px;
-  transform: translate(-50%, -50%);
-  background: lighten(rgba(3, 106, 171, 1), 65%);
-
   #throbber {
-    width: 96px;
-    height: 96px;
-
-    svg {
-      width: 96px;
-      height: 96px;
-    }
 
     .marker {
       fill: var(--blue);
@@ -35,7 +32,6 @@ div {
       fill: var(--disabled);
       fill-rule: nonzero;
     }
-
   }
 }
 

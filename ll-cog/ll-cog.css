@@ -7,7 +7,7 @@
   overflow: hidden; }
 
 :host[active] {
-  display: block; }
+  display: inline-block; }
 
 .cog {
   transform-origin: 50% 50%;
