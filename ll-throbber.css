@@ -1,27 +1,29 @@
-div {
+:host {
+  display: none;
+  width: 100%;
+  max-width: 100px; }
+
+:host[active] {
+  display: inline-block; }
+
+:host[show-border] {
   border: 1px inset #0367a6;
   box-shadow: 0 0 10px rgba(3, 106, 171, 0.3);
-  position: fixed;
-  top: 50%;
-  left: 50%;
   padding: 5px 10px;
-  transform: translate(-50%, -50%);
   background: #fbfdff; }
-  div #throbber {
-    width: 96px;
-    height: 96px; }
-    div #throbber svg {
-      width: 96px;
-      height: 96px; }
-    div #throbber .marker {
-      fill: var(--blue);
-      stroke: var(--blue-dark);
-      stroke-width: 1; }
-    div #throbber .gear {
-      transform-origin: 50% 50%;
-      animation: spinner ease 2s 0.5s infinite;
-      fill: var(--disabled);
-      fill-rule: nonzero; }
+
+#container {
+  max-width: 100px; }
+
+#throbber .marker {
+  fill: var(--blue);
+  stroke: var(--blue-dark);
+  stroke-width: 1; }
+#throbber .gear {
+  transform-origin: 50% 50%;
+  animation: spinner ease 2s 0.5s infinite;
+  fill: var(--disabled);
+  fill-rule: nonzero; }
 
 @-webkit-keyframes spinner {
   from {

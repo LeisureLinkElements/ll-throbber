@@ -1,4 +1,4 @@
-@import 'mixins';
+@import '../mixins';
 
 :host {
   display: none;
@@ -7,19 +7,17 @@
   stroke: var(--gray-medium);
   stroke-width: 1;
   overflow: hidden;
+  width: 100%;
+  max-width: 100px;
 }
 
 :host[active] {
-  display: block;
+  display: inline-block;
 }
 
 .cog {
   transform-origin: 50% 50%;
   animation: spinner ease 2s 0s infinite;
-}
-
-svg {
-  position: absolute;
 }
 
 @include keyframes(spinner) {

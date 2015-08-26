@@ -4,38 +4,40 @@ $blue: #036AAB;
 
 $whiteTransparent: rgba(3, 106, 171, 0);
 
-div {
+:host {
+  display: none;
+  width: 100%;
+  max-width: 100px;
+}
+
+:host[active] {
+  display: inline-block;
+}
+
+:host[show-border] {
   border: 1px inset darken($blue, 1);
   box-shadow: 0 0 10px rgba(3, 106, 171, 0.3);
-  position: fixed;
-  top: 50%;
-  left: 50%;
   padding: 5px 10px;
-  transform: translate(-50%, -50%);
   background: lighten(rgba(3, 106, 171, 1), 65%);
+}
 
-  #throbber {
-    width: 96px;
-    height: 96px;
+#container {
+  max-width: 100px;
+}
 
-    svg {
-      width: 96px;
-      height: 96px;
-    }
+#throbber {
 
-    .marker {
-      fill: var(--blue);
-      stroke: var(--blue-dark);
-      stroke-width: 1;
-    }
+  .marker {
+    fill: var(--blue);
+    stroke: var(--blue-dark);
+    stroke-width: 1;
+  }
 
-    .gear {
-      transform-origin: 50% 50%;
-      animation: spinner ease 2s 0.5s infinite;
-      fill: var(--disabled);
-      fill-rule: nonzero;
-    }
-
+  .gear {
+    transform-origin: 50% 50%;
+    animation: spinner ease 2s 0.5s infinite;
+    fill: var(--disabled);
+    fill-rule: nonzero;
   }
 }
 

@@ -7,22 +7,55 @@
     <title>ll-throbber Demo</title>
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="../ll-throbber.html">
+    <link rel="import" href="../ll-cog/ll-cog.html">
   </head>
 
-  <body>
+  <body style="padding: 20px;">
 
-    <button class="btn btn-default">Toggle State</button>
+  <button class="btn btn-default">Toggle State</button>
 
-    <ll-throbber active></ll-throbber>
+  <div style="margin: 5px; width: 100px; position: fixed; left: 50%; top:50%; transform: translate(-50%, -50%)">
+    <ll-throbber active show-border></ll-throbber>
+  </div>
 
-    <script>
+  <div>
+    <p>Place in a div with a width set to change the size</p>
 
-      document.querySelector('button').addEventListener('click', function () {
-        var throbberEl = document.querySelector('ll-throbber');
-        throbberEl.active = !throbberEl.active;
-      });
+    <div style="width: 40px;">
+      <ll-throbber active></ll-throbber>
+    </div>
+  </div>
 
-    </script>
+  <div>
+    <p>If no width is set, it will default to its max-width property, which is 100px</p>
+
+    <div>
+      <ll-throbber active></ll-throbber>
+    </div>
+  </div>
+
+
+  <p>The elements are display: inline-block, so make sure to place them in a container to control positioning and
+    size.</p>
+  <ll-cog id="cog" style="width: 100px;" active></ll-cog>
+  <ll-cog id="cog" style="width:50px;" active></ll-cog>
+
+  <script>
+    document.querySelector('button').addEventListener('click', function() {
+      var throbbers = document.querySelectorAll('ll-throbber');
+      var cogs = document.querySelectorAll('ll-cog');
+
+      Array.prototype.slice.call(throbbers)
+          .forEach(function(throb) {
+            throb.active = !throb.active;
+          });
+
+      Array.prototype.slice.call(cogs)
+          .forEach(function(cog) {
+            cog.active = !cog.active;
+          });
+    });
+  </script>
   </body>
 
 </html>
