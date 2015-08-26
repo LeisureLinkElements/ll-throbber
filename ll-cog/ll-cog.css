@@ -4,7 +4,9 @@
   fill: var(--disabled);
   stroke: var(--gray-medium);
   stroke-width: 1;
-  overflow: hidden; }
+  overflow: hidden;
+  width: 100%;
+  max-width: 100px; }
 
 :host[active] {
   display: inline-block; }
@@ -12,9 +14,6 @@
 .cog {
   transform-origin: 50% 50%;
   animation: spinner ease 2s 0s infinite; }
-
-svg {
-  position: absolute; }
 
 @-webkit-keyframes spinner {
   from {

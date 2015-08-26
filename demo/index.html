@@ -12,40 +12,50 @@
 
   <body style="padding: 20px;">
 
-    <button class="btn btn-default">Toggle State</button>
+  <button class="btn btn-default">Toggle State</button>
 
-    <div style="margin: 5px; width: 100px; position: fixed; left: 50%; top:50%;">
-      <ll-throbber active show-border></ll-throbber>
-    </div>
+  <div style="margin: 5px; width: 100px; position: fixed; left: 50%; top:50%; transform: translate(-50%, -50%)">
+    <ll-throbber active show-border></ll-throbber>
+  </div>
 
-    <div>
-      place in a div with a width set to change the size
-      <div style="width: 40px;">
-        <ll-throbber active></ll-throbber>
-      </div>
-    </div>
+  <div>
+    <p>Place in a div with a width set to change the size</p>
 
-    <div>
-      If no width is set, it will default to its max-width property, which is 100px
+    <div style="width: 40px;">
       <ll-throbber active></ll-throbber>
     </div>
+  </div>
+
+  <div>
+    <p>If no width is set, it will default to its max-width property, which is 100px</p>
+
+    <div>
+      <ll-throbber active></ll-throbber>
+    </div>
+  </div>
 
 
-    <ll-cog id="cog" style="width: 100px; height: 100px;" active></ll-cog>
-    <ll-cog id="cog" style="width:50px; height: 50px;" active></ll-cog>
+  <p>The elements are display: inline-block, so make sure to place them in a container to control positioning and
+    size.</p>
+  <ll-cog id="cog" style="width: 100px;" active></ll-cog>
+  <ll-cog id="cog" style="width:50px;" active></ll-cog>
 
-    <script>
-      document.querySelector('button').addEventListener('click', function () {
-        var throbbers = document.querySelectorAll('ll-throbber');
-        var cogs = document.querySelectorAll('ll-cog');
+  <script>
+    document.querySelector('button').addEventListener('click', function() {
+      var throbbers = document.querySelectorAll('ll-throbber');
+      var cogs = document.querySelectorAll('ll-cog');
 
-        //TODO repeat over throbbers or cogs
+      Array.prototype.slice.call(throbbers)
+          .forEach(function(throb) {
+            throb.active = !throb.active;
+          });
 
-        throbberEl.active = !throbberEl.active;
-        cogEl[0].active = !cogEl[0].active;
-        cogEl[1].active = !cogEl[1].active;
-      });
-    </script>
+      Array.prototype.slice.call(cogs)
+          .forEach(function(cog) {
+            cog.active = !cog.active;
+          });
+    });
+  </script>
   </body>
 
 </html>
