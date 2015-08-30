@@ -1,7 +1,9 @@
 :host {
   display: none;
   width: 100%;
-  max-width: 100px; }
+  max-width: 100px;
+  height: 100%;
+}
 
 :host[active] {
   display: inline-block; }
