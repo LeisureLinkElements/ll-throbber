@@ -26,7 +26,7 @@
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
     "web-component-tester": "*",
-    "iron-ajax": "PolymerElements/iron-ajax#~1.0.3",
+    "iron-ajax": "PolymerElements/iron-ajax#~1.2.0",
     "test-fixture": "PolymerElements/test-fixture#~1.0.0"
   }
 }
